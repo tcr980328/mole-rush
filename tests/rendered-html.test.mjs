@@ -23,5 +23,7 @@ test("server-renders the mobile mole game", async () => {
   assert.match(html, /地鼠/);
   assert.match(html, /60 秒限時挑戰/);
   assert.match(html, /九個地鼠洞/);
+  assert.match(html, /拖曳鎚子，輕點敲擊/);
+  assert.match(html, /desktop-hammer/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });

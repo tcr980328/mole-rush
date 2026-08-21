@@ -48,10 +48,11 @@ jobs:
 
           cp -a dist/client/. site/
 
-          if [ -d site/mole-rush ]; then
-            echo "===== Flatten mole-rush directory ====="
-            cp -a site/mole-rush/. site/
-            rm -rf site/mole-rush
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          if [ -d "site/$REPO_NAME" ]; then
+            echo "===== Flatten $REPO_NAME directory ====="
+            cp -a "site/$REPO_NAME/." site/
+            rm -rf "site/$REPO_NAME"
           fi
 
           touch site/.nojekyll
